@@ -24,26 +24,26 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-secret_file = os.path.join(BASE_DIR, 'secrets.json')
+# secret_file = os.path.join(BASE_DIR, 'secrets.json')
 
-with open(secret_file) as f:
-    secrets = json.loads(f.read())
+# with open(secret_file) as f:
+#     secrets = json.loads(f.read())
 
-def get_secret(setting, secrets=secrets):
-    try:
-        print("check ", secrets[setting])
-        return secrets[setting]
-    except KeyError:
-        error_msg = "set the {} environment variable". format(setting)
-        raise ImproperlyConfigured(error_msg)
-SECRET_KEY = get_secret("SECRET_KEY")
+# def get_secret(setting, secrets=secrets):
+#     try:
+#         print("check ", secrets[setting])
+#         return secrets[setting]
+#     except KeyError:
+#         error_msg = "set the {} environment variable". format(setting)
+#         raise ImproperlyConfigured(error_msg)
+# SECRET_KEY = get_secret("SECRET_KEY")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-#SECRET_KEY = m(4$yyqo*p8fo@==d20aqphs7%*9mq0gjvsg8z00%(lku94^6s
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = True
+SECRET_KEY = 'm(4$yyqo*p8fo@==d20aqphs7%*9mq0gjvsg8z00%(lku94^6s'
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
+# DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 ALLOWED_HOSTS = []
 
 
